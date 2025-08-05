@@ -1,0 +1,17 @@
+
+:root {
+  /* Warna brand utama */
+  --zh-bg: #CFEED9;         /* Background */
+  --zh-accent: #7ECCA0;     /* Aksen (badge, garis, highlight) */
+
+  /* Warna teks */
+  --zh-text: #282E2E;       /* Teks utama */
+  --zh-text-light: #ffffff; /* Teks di tombol */
+
+  /* Tombol utama */
+  --btn-primary: #0093D1;   /* Tombol/CTA utama */
+  --btn-hover: #0078AA;     /* Saat hover */
+  --btn-active: #005F86;    /* Saat diklik */
+  --btn-disabled: #B5EAF9;  /* Tombol nonaktif */
+}
+

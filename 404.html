@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>404 - Halaman Tidak Ditemukan</title>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&display=swap" rel="stylesheet" />
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Oswald', sans-serif;
+      background-color: #CFEED9; /* hijau muda seperti di web kamu */
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      text-align: center;
+      flex-direction: column;
+      color: #333;
+    }
+
+    .container {
+      max-width: 500px;
+      padding: 20px;
+    }
+    
+    img {
+      filter: drop-shadow(0 0 0.4rem red);
+    }
+
+    h1 {
+      font-size: 5rem;
+      color: red; /* merah mencolok untuk error */
+      margin: 0;
+    }
+
+    h2 {
+      font-size: 1.8rem;
+      margin: 10px 0;
+    }
+
+    p {
+      font-size: 1rem;
+      margin-bottom: 20px;
+    }
+
+    a {
+      display: inline-block;
+      padding: 10px 20px;
+      background-color: #00aa55;
+      color: white;
+      text-decoration: none;
+      border-radius: 8px;
+      transition: background-color 0.3s;
+    }
+
+    a:hover {
+      background-color: #008844;
+    }
+
+    img {
+      width: 120px;
+      margin-bottom: 20px;
+    }
+
+    @media (max-width: 500px) {
+      h1 {
+        font-size: 3rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <img src="/assets/img/fav.png" alt="Logo ZHStore" />
+    <h1>404</h1>
+    <h2>Oops! Halaman tidak ditemukan</h2>
+    <p>Sepertinya halaman yang kamu tuju salah atau belum tersedia. Coba kembali ke halaman utama ya!</p>
+    <a href="/">Kembali ke Beranda</a>
+  </div>
+</body>
+</html>

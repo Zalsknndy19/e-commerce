@@ -1,0 +1,153 @@
+#palette5cc593 {
+    color: #5cc593;
+    background-color: #3f9f31;
+    border-color: #64bf6a;
+    text-shadow: #a0e1a4;
+    background: #89dbab;
+}
+#palette5cc93 {
+    color: #f9f9f9;
+    background-color: #3f9f31;
+    border-color: #64bf6a;
+    text-shadow: #a0e1a4;
+    background: #89dbab;
+}
+
+body {
+  font-family: "Oswald", sans-serif;
+  font-weight: 200;
+  color: #333;
+  background-color: #CFEED9;
+  margin: 0;
+  overflow-x: hidden;
+}
+
+.container {
+    width: 100%;
+
+    margin: 0 auto;
+}
+
+.hero {
+    background: pink;
+    text-align: center;
+    padding: 10px 0px;
+}
+
+.hero .btn-cta {
+    background: #333;
+    color: #fff;
+    padding: 10px 20px;
+    text-decoration: none;
+    margin-top: 15px;
+    display: inline-block;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+    background-color: #64bf6a;
+}
+
+table,
+th,
+td {
+    border: 2px solid;
+    border-color: #a0e1a4;
+    text-align: center;
+}
+
+section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 20vh;
+    width: 100%;
+    background: url("./img.jpg") no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.form-box {
+    position: relative;
+    width: 400px;
+    height: 690px;
+    background: transparent;
+    border: 2px solid #333;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.inputbox {
+    position: relative;
+    margin: 30px 0;
+    width: 310px;
+    border-bottom: 2px solid #333;
+}
+
+.inputbox label {
+    position: absolute;
+    top: 50%;
+    left: 5px;
+    transform: translateY(-50%);
+    color: #333;
+    font-size: 1em;
+    pointer-events: none;
+    transition: 0.5s;
+}
+
+input:focus ~ label {
+    top: -5px;
+}
+input:valid ~ label {
+    top: -5px;
+}
+
+.inputbox input {
+    width: 100%;
+    height: 50px;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: 1em;
+    padding: 0 35px 0 5px;
+    color: #333;
+}
+
+.simpan {
+    width: 100%;
+    height: 40px;
+    border-radius: 40px;
+    background: white;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    color: #333;
+}
+
+select {
+    background: #a0e1a4;
+    width: 100%;
+    border: none;
+    height: 35px;
+    border-radius: 10px;
+}
+
+#logo {
+    filter: drop-shadow(0px 0px 7px #333);
+}
+
+
+
+/* From https://css.glass */
+.glass {
+background: rgba(255, 255, 255, 0.2);
+border-radius: 16px;
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+-webkit-backdrop-filter: blur(5px);
+border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+
