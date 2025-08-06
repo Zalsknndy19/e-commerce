@@ -124,5 +124,5 @@ Jika kamu merasa template ini bermanfaat, dukung saya atau ikuti saya di sosial 
 📘 Facebook - [zalsknndy19](https://www.facebook.com/zalsknndy19)
 
 
-> 🎯 Jangan lupa follow TikTok saya ya! Konten menarik seputar coding, tutorial, dan teknologi akan dibagikan secara rutin. Yuk follow sekarang 😄
+> 🎯 Jangan lupa follow Sosmed saya ya! Konten menarik seputar coding, tutorial, dan teknologi akan dibagikan secara rutin. Yuk follow sekarang 😄
 
