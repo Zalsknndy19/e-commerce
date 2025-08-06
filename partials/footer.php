@@ -71,11 +71,13 @@
     <script src='https://alexandrebuffet.fr/codepen/slider/slick-animation.min.js'></script>
     <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
-    <script type="text/javascript" src="/assets/js/jquery.min.js"></script>
-    <script type="text/javascript" src="/assets/js/bootstrap.min.js"></script>
-    <script type="text/javascript" src="/assets/js/nouislider.min.js"></script>
-    <script type="text/javascript" src="/assets/js/jquery.zoom.min.js"></script>
-    <script type="text/javascript" src="/assets/js/main.js"></script>
-    <script type="text/javascript" src="/assets/js/slick.min.js"></script>
-    <script type="text/javascript" src="/assets/js/script.js"></script>
+    <script type="text/javascript" src="<?php echo auto_version('/assets/js/jquery.min.js'); ?>"></script>
+    <script type="text/javascript" src="<?php echo auto_version('/assets/js/bootstrap.min.js'); ?>"></script>
+    <script type="text/javascript" src="<?php echo auto_version('/assets/js/nouislider.min.js'); ?>"></script>
+    <script type="text/javascript" src="<?php echo auto_version('/assets/js/jquery.zoom.min.js'); ?>"></script>
+    <script type="text/javascript" src="<?php echo auto_version('/assets/js/main.js'); ?>"></script>
+    <script type="text/javascript" src="<?php echo auto_version('/assets/js/slick.min.js'); ?>"></script>
+    <script type="text/javascript" src="<?php echo auto_version('/assets/js/script.js'); ?>"></script>
     <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.0.0/model-viewer.min.js"></script>
+<script src="/assets/js/main.js"></script>
+<script src="<?= auto_version('/assets/js/main.js'); ?>"></script>

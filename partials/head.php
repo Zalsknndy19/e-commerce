@@ -1,4 +1,13 @@
 <?php
+  
+function auto_version($file) {
+  $filepath = $_SERVER['DOCUMENT_ROOT'] . $file;
+  if (file_exists($filepath)) {
+    return $file . '?v=' . filemtime($filepath);
+  } else {
+    return $file; // fallback kalau file gak ditemukan
+  }
+}
   // Deteksi apakah ini halaman detail produk
   $is_product_page = isset($is_product_page) && $is_product_page === true;
 
@@ -65,17 +74,18 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet"/>
     <!-- Slick -->
-    <link type="text/css" rel="stylesheet" href="/assets/css/slick.css"/>
-    <link type="text/css" rel="stylesheet" href="/assets/css/slick-theme.css"/>
+    <link type="text/css" rel="stylesheet" href="<?php echo auto_version('/assets/css/slick.css'); ?>"/>
+    <link type="text/css" rel="stylesheet" href="<?php echo auto_version('/assets/css/slick-theme.css'); ?>"/>
     <!-- nouislider -->
-    <link type="text/css" rel="stylesheet" href="/assets/css/nouislider.min.css"/>
+    <link type="text/css" rel="stylesheet" href="<?php echo auto_version('/assets/css/nouislider.min.css'); ?>"/>
     <!-- Font Awesome Icon -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="icon" href="/assets/img/fav.png" type="image/x-icon"/>
+ 
     <!-- Custom stylesheet -->
-    <link type="text/css" rel="stylesheet" href="/assets/css/styles.css"/>
+    <link type="text/css" rel="stylesheet" href="<?php echo auto_version('/assets/css/styles.css'); ?>"/>
 <?php if ($is_prompt_page): ?>
-    <link type="text/css" rel="stylesheet" href="/assets/css/styleprompt.css"/>
+    <link type="text/css" rel="stylesheet" href="<?php echo auto_version('/assets/css/styleprompt.css'); ?>"/>
 <?php endif; ?>
 <?php if ($is_product_page): 
   $sku_id = str_pad($id, 4, '0', STR_PAD_LEFT);

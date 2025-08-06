@@ -29,4 +29,5 @@ function ratingSemua($jumlah_pembelian) {
         return rand(38, 42) / 10; // 3.8 - 4.2
     }
 }
+
 ?>
