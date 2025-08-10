@@ -1,0 +1,21 @@
+name: Deploy to InfinityFree via FTP
+
+on:
+  push:
+    branches:
+      - main # Ganti dengan nama branch utama Anda, misal: master
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    - name: FTP Deploy
+      uses: SamKirkland/FTP-Deploy-Action@4.3.3
+      with:
+        server: ${{ secrets.FTP_SERVER2 }}
+        username: ${{ secrets.FTP_USERNAME2 }}
+        password: ${{ secrets.FTP_PASSWORD2 }}
+        server-dir: /htdocs/ # Ini adalah direktori tujuan di server InfinityFree
