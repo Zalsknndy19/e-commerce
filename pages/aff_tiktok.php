@@ -16,11 +16,12 @@
 <!DOCTYPE html>
 <html>
 <?php
+  require_once __DIR__.'/../partials/func/config.php';
   $product_description = $prod_tiktok['description'] ?? '';
   $ogtitle = "ZHStore. " . $prod_tiktok['title'];
   $ogdesc = "Promo menarik! ".potong_title($prod_tiktok['title'], 20)." berkualitas, cuma di ZHStore. Yuk cek sekarang!";
   $ogimg = $prod_tiktok['image'];
-  $ogurl = 'https://store.zhwifi.web.id/pages/aff_tiktok.php?kode=' . $id;
+  $ogurl = aff_tiktokDetailURL($id);
   $ogtype = "product";
   $text = 'Lihat produk ini di ZHStore! ' . $ogurl;
   $is_product_page = true;

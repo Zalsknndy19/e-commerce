@@ -9,16 +9,17 @@
 <!DOCTYPE html>
 <html>
 <?php
+  require_once __DIR__.'/../partials/func/config.php';
   $ogtitle = "title";
   $ogdesc = "description";
   $ogimg = "/assets/img/splash/image.png";
-  $ogurl = "https://store.zhwifi.web.id/pages/page.php";
+  $activePage = 'Template';
+  $ogurl = categoryURL($activePage);
   $ogtype = "website";
   include $baseDir . '/partials/head.php';
 ?>
   <body>
 <?php
-  $activePage = 'Page';
   include $baseDir . '/partials/header.php';
 ;?>
     <main>

@@ -7,17 +7,18 @@
 <!DOCTYPE html>
 <html lang="id">
 <?php
+  require_once __DIR__.'/../partials/func/config.php';
   $ogtitle = "ZHStore. Prompt ChatGPT Keren.";
   $ogdesc = "Ubah Foto Selfie-mu Jadi Makin Keren Pakai Prompt AI Berikut!!!";
   $ogimg = "/assets/img/splash/meta_gpt.jpg";
-  $ogurl = "https://store.zhwifi.web.id/pages/promptgpt.php";
+  $activePage = 'Promptgpt';
+  $ogurl = categoryURL($activePage);
   $ogtype = "website";
   $is_prompt_page = true;
   include $baseDir . '/partials/head.php';
 ?>
   <body>
 <?php
-  $activePage = 'Prompt';
   include $baseDir . '/partials/header.php';
 ;?>
     <main>

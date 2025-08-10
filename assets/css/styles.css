@@ -95,6 +95,11 @@ a {
   border: none;
 }
 
+img {
+  max-width: 100%;
+  height: auto;
+}
+
 ul, ol {
   margin: 0;
   padding: 0;

@@ -1,0 +1,42 @@
+#container { width: 8vw; height: 8vw; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); overflow: hidden;}
+
+
+.loader2 { position: fixed; width: calc(100% - 2vw); height: calc(100% - 2vw); border: 1vw solid forestgreen; border-top: 1vw solid #09f; border-radius: 100%; animation: rotasi 2s linear infinite; display:block;} 
+@keyframes rotasi{ 
+100% { transform: rotate(360deg);}}
+
+ input[type=text] { color: #009BFF;
+ width:130px;     box-sizing:border-box;     border:3px solid green;     border-radius:4px;     font-size:18px;     background-color:rgba(00,99,50,0.2);      padding:12px 20px 12px 14px;     -webkit-transition:width 0.4s linear,  border-color 2s;   transition:width 0.4s linear, border-color 2s;}  
+ input[type=text]:hover {     width:73%; border-color: #009BFF;}
+a {text-decoration:none; color:#007527; font-size:110%; transition: color 0.5s, transform 0.4s;}
+li {text-decoration:none; color:#007527; font-size:120%; transition: color 0.5s, transform 0.4s;}
+body {background-color:#1C2125; background-image: url('ArRiyadh.png');
+color:#1C2125;
+background-repeat:no-repeat;
+background-position:100% 1%;
+text-decoration:none;
+background-size:26%;
+display:block;
+-khtml-user-select:none;
+-webkit-user-select:none;
+-moz-user-select:none;
+-ms-user-select:none;
+-o-user-select:none;
+user-select:none;
+unselectable:on;
+animation: bg 15s linear infinite;}
+@keyframes bg {
+0%, 25% { background-color:#1C2125;
+}
+50% { background-color:#323B42;}
+75% { background-color:#1C2125;
+}
+100%,0% { background-color:#323B42;}}
+audio { display:none;}
+marquee { font-family: Arabica; color: lightgreen}
+span, div { font-family: Arabic; color: lightgreen;}
+@font-face {font-family: Arabic; src: url('tekslatin.otf');}
+@font-face {font-family: Arabica; src: url('arab.otf');}
+body,input,p,span {font-family:Arabic;}
+li:hover, a:hover { color: #009BFF;transform: scale(1.05);}
+li:active, a:active { color: limegreen;}

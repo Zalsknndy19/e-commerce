@@ -15,16 +15,17 @@
 <!DOCTYPE html>
 <html>
 <?php
+  require_once __DIR__.'/../partials/func/config.php';
   $ogtitle = "ZHStore. Fashion Stylish Buat Pria dan Wanita Yang Selalu Tampil Modis Ketika Bepergian";
   $ogdesc = "Pakaian Berkualitas dengan motif Keren dan Cantik disini sangat cocok untuk menambah Aura Ketampanan dan Kecantikan Kalian, Yukk dilihat-lihat dulu, kalo suka langsung checkout aja Yaaa😁";
   $ogimg = "/assets/img/splash/Fashion.webp";
-  $ogurl = "https://store.zhwifi.web.id/pages/Fashion.php";
+  $activePage = 'Fashion';
+  $ogurl = categoryURL($activePage);
   $ogtype = "website";
   include $baseDir . '/partials/head.php';
 ?>
   <body>
 <?php
-  $activePage = 'Fashion';
   include $baseDir . '/partials/header.php';
 ;?>
     <main>

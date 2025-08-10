@@ -9,16 +9,17 @@
 <!DOCTYPE html>
 <html>
 <?php
+  require_once __DIR__.'/../partials/func/config.php';
   $ogtitle = "ZHStore. Find your favorite items here";
   $ogdesc = "Promo menarik dengan barang berkualitas!!!, cuma di ZHStore. Yuk cek sekarang!";
   $ogimg = "/assets/img/splash/Other.webp";
-  $ogurl = "https://store.zhwifi.web.id/pages/Other.php";
+  $activePage = 'Other';
+  $ogurl = categoryURL($activePage);
   $ogtype = "website";
   include $baseDir . '/partials/head.php';
 ?>
   <body>
 <?php
-  $activePage = 'Other';
   include $baseDir . '/partials/header.php';
 ;?>
     <main>

@@ -13,16 +13,17 @@ include $baseDir.'/partials/func/functions.php';
 <!DOCTYPE html>
 <html>
 <?php
+  require_once __DIR__.'/../partials/func/config.php';
   $ogtitle = "ZHStore. Nyari Rekomendasi Barang Elektronik Untuk Kebutuhan Sehari-hari? Disini Aja Nyarinya Udah Dipilihin Sama Mimin😁";
   $ogdesc = "Nyari Speaker buat Karaoke? Nyari Lampu buat NGELIVE? Atau lagi nyari TWS buat dengerin musik sambil nyantai? Wihhh disini disediain banyak lho, kamu tinggal pilih aja Produk yang mau kamu beli, tenang aja kualitasnya terjamin kok☺️, Yukk buruan Checkidot!!!";
   $ogimg = "/assets/img/splash/Electronics.webp";
-  $ogurl = "https://store.zhwifi.web.id/pages/Electronics.php";
+  $activePage = 'Electronics';
+  $ogurl = categoryURL($activePage);
   $ogtype = "website";
   include $baseDir . '/partials/head.php';
 ?>
   <body>
 <?php
-  $activePage = 'Electronics';
   include $baseDir . '/partials/header.php';
 ;?>
     <main>

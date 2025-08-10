@@ -9,16 +9,17 @@
 <!DOCTYPE html>
 <html>
 <?php
+  require_once __DIR__.'/../partials/func/config.php';
   $ogtitle = "ZHStore. Temukan Produk Kulit Berkualitas Premium Dengan Harga Terjangkau.";
   $ogdesc = "Pecinta Vintage pasti suka dengan produk yang ada disini!! Berbagai pilihan Produk Kulit Berkualitas Premium yang pengerjaannya Handmade agar kualitas tetap terjaga dan hasil akhir tetap rapi agar nyaman dipandang, tunggu apa lagi?! Buruan order sekarang!!!";
   $ogimg = "/assets/img/splash/Leather.webp";
-  $ogurl = "https://store.zhwifi.web.id/pages/Leather.php";
+  $activePage = 'Leather';
+  $ogurl = categoryURL($activePage);
   $ogtype = "website";
   include $baseDir . '/partials/head.php';
 ?>
   <body>
 <?php
-  $activePage = 'Leather';
   include $baseDir . '/partials/header.php';
 ;?>
     <main>

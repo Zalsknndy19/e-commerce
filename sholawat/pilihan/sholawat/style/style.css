@@ -1,0 +1,52 @@
+@font-face {font-family:Arabic; src:url('arab.otf');}
+@font-face {font-family:Title; src:url('arab.otf');}
+@font-face {font-family:Arabica;
+src:url('arab.otf')}
+@font-face {font-family:Latin;
+src:url('tekslatin.otf')}
+
+body {background-color:#1C2125; background-image: url('ArRiyadh.png');
+background-repeat:no-repeat;
+background-position:95% 1%;
+text-decoration:none;
+background-size:18%;
+display:block;
+-khtml-user-select:none;
+-webkit-user-select:none;
+-moz-user-select:none;
+-ms-user-select:none;
+-o-user-select:none;
+user-select:none;
+unselectable:on;
+animation: bg 25s linear infinite;}
+h3 { font-family:Title; text-align:center; color: white; font-size:4.3vw; transition: color 1s;}
+h3:hover { color: lightgreen;}
+h3:active { color: teal;}
+.lirik { font-family:Arabic; font-size:4.3vw; color: white; }
+.lirik1 { font-family:Arabica;  font-size:5vw; color: white;}
+.latin { font-family:Latin;  font-size:5vw; color: white;}
+.latinltk { font-family:Latin;  font-size:4.3vw; color: white;}
+.hrfull { width:120%;}
+.bgupright { background-position:115% 1%;}
+.h3cntr { width:130%;}
+hr { border: 1vw double #009BFF;
+text-align: bottom; width:85%; transition: border-color 1s;}
+hr:hover {border-color: #009900;}
+tr:hover, p:hover { color: lightgreen;}
+hr:active {border-color: lightgreen;}
+tr:active, p:active { color: #009900;}
+tr, p { transition: color 0.7s;}
+@keyframes bg {
+ 100%, 0%,1%, 2%, 20% {
+    background-color: #1C2125;
+  }
+  25%, 26%, 27%, 28% {
+    background-color: #670600;
+  }
+  50%, 51%, 52%, 53% {
+    background-color: #1F491E;
+  }
+  75%, 76%, 77%, 78% {
+    background-color: #292C40;
+  }
+}

@@ -11,16 +11,17 @@
 <!DOCTYPE html>
 <html>
 <?php
+  require_once __DIR__.'/../partials/func/config.php';
   $ogtitle = "ZHStore. Berbagai Cemilan dan Minuman Untuk Menemani Hari-harimu";
   $ogdesc = "Suka Nobar tapi gak ada cemilan sama minuman? Ahh cemen banget sih, gak seru lho nonton kalo gak sambil ngemil, rasanya kayak kamu ngejar-ngejar dia tapi dia malah lari ngejar orang lain :v :), Yuk lihat-lihat disini.";
   $ogimg = "/assets/img/splash/Food.webp";
-  $ogurl = "https://store.zhwifi.web.id/pages/Food.php";
+  $activePage = 'Food';
+  $ogurl = categoryURL($activePage);
   $ogtype = "website";
   include $baseDir . '/partials/head.php';
 ?>
   <body>
 <?php
-  $activePage = 'Food';
   include $baseDir . '/partials/header.php';
 ;?>
     <main>

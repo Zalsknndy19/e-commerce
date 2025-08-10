@@ -55,7 +55,7 @@
       <nav id="navigation">
         <div id="responsive-nav">
           <div class="usercard">
-            <div class="div1"><img loading="lazy" src="/assets/img/user.png" alt="Photo Profiles"><span><a href="/command/user.php">Detail</a></span></div>
+            <div class="div1"><img loading="lazy" src="/assets/img/user.png" alt="Photo Profiles"><span><a href="/command/user');?>">Detail</a></span></div>
             <div class="div2"><span>Nama</span></div>
             <div class="div3"><span>Email</span></div>
             <div class="div4"><span>Telepon</span></div>
@@ -66,25 +66,28 @@
               <a href="/">Beranda</a>
             </li>
             <li class="<?php echo ($activePage === 'Accessories') ? 'active' : ''; ?>">
-              <a href="/pages/Accessories.php">Accessories</a>
+              <a href="<?php echo categoryURL('Accessories');?>">Accessories</a>
+            </li>
+            <li class="<?php echo ($activePage === 'E-book') ? 'active' : ''; ?>">
+              <a href="<?php echo ebookCatalogURL();?>">E-book</a>
             </li>
             <li class="<?php echo ($activePage === 'Electronics') ? 'active' : ''; ?>">
-              <a href="/pages/Electronics.php">Electronics</a>
+              <a href="<?php echo categoryURL('Electronics');?>">Electronics</a>
             </li>
             <li class="<?php echo ($activePage === 'Fashion') ? 'active' : ''; ?>">
-              <a href="/pages/Fashion.php">Fashion</a>
+              <a href="<?php echo categoryURL('Fashion');?>">Fashion</a>
             </li>
             <li class="<?php echo ($activePage === 'Food') ? 'active' : ''; ?>">
-              <a href="/pages/Food.php">Food</a>
+              <a href="<?php echo categoryURL('Food');?>">Food</a>
             </li>
             <li class="<?php echo ($activePage === 'Leather') ? 'active' : ''; ?>">
-              <a href="/pages/Leather.php">Leather</a>
+              <a href="<?php echo categoryURL('Leather');?>">Leather</a>
             </li>
             <li class="<?php echo ($activePage === 'Other') ? 'active' : ''; ?>">
-              <a href="/pages/Other.php">Other</a>
+              <a href="<?php echo categoryURL('Other');?>">Other</a>
             </li>
-            <li class="<?php echo ($activePage === 'Prompt') ? 'active' : ''; ?>">
-              <a href="/pages/promptgpt.php">Prompt ChatGPT</a>
+            <li class="<?php echo ($activePage === 'Promptgpt') ? 'active' : ''; ?>">
+              <a href="<?php echo categoryURL('Promptgpt');?>">Prompt ChatGPT</a>
             </li>
           </ul>
         </div>

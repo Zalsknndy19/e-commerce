@@ -9,17 +9,18 @@
 <!DOCTYPE html>
 <html>
 <?php
+  require_once __DIR__.'/../partials/func/config.php';
   $ogtitle = "ZHStore. Tampilan Semua Produk";
   $ogdesc = "Tampilan Semua Produk Yang Ada di Database";
   $ogimg = "/assets/img/splash/splash_meta.png";
-  $ogurl = "https://store.zhwifi.web.id/pages/all_product.php";
+  $activePage = 'Beranda';
+  $ogurl = categoryURL($activePage);
   $ogtype = "website";
   include $baseDir . '/partials/head.php';
 ?>
 
   <body>
 <?php
-  $activePage = 'Beranda';
   include $baseDir . '/partials/header.php';
 ;?>
     <main>

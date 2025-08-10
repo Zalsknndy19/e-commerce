@@ -9,17 +9,18 @@
 <!DOCTYPE html>
 <html lang="id">
 <?php
+  require_once __DIR__.'/../partials/func/config.php';
   $ogtitle = "ZHStore. ".$data['judul']." Detail Page";
   $ogdesc = "Ubah Foto Selfie-mu Jadi Lebih Menarik Dengan Prompt ChatGPT Yang Satu Ini!!!";
   $ogimg = "https://res.cloudinary.com/dii1gyt4o/image/upload/".htmlspecialchars($data['link_img']);
-  $ogurl = "https://store.zhwifi.web.id/pages/detail-prompt.php?id=".$id;
+  $ogurl = promptDetailURL($id);
   $ogtype = "product";
   $is_prompt_page = true;
   include $baseDir . '/partials/head.php';
 ?>
   <body>
 <?php
-  $activePage = 'Prompt';
+  $activePage = 'Promptgpt';
   include $baseDir . '/partials/header.php';
 ;?>
     <main>
