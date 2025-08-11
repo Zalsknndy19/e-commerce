@@ -1,5 +1,6 @@
 <?php
 include $baseDir.'/partials/func/all.php';
+require_once $baseDir.'/partials/func/config.php';
 ?>
       <section>
         <h2 class="judul-kategori" id="<?php echo $id_kategori;?>"><?php echo $judul_kategori;?></h2>
@@ -34,7 +35,7 @@ include $baseDir.'/partials/func/all.php';
 <?php endif; ?>
                   <span class="new"><?php echo $harga_new;?></span>
                 </div>
-                <a class="btn" href="/pages/aff_tiktok.php?kode=<?php echo $prod_tiktok["id"];?>">Cek Disini <i class="fa-solid fa-bag-shopping"></i></a>
+                <a class="btn" href="<?php echo aff_tiktokDetailURL($prod_tiktok["id"]);?>">Cek Disini <i class="fa-solid fa-bag-shopping"></i></a>
               </div>
               <div class="meta">
                 <div class="rating">
@@ -84,7 +85,7 @@ include $baseDir.'/partials/func/all.php';
                     <span class="new"><?php echo $harga_new;?></span>
                   </div>
                   <button class="btn">
-                    <a href="/pages/aff_tiktok.php?kode=<?php echo $prod_tiktok["id"];?>">Cek Disini <i class="fa-solid fa-bag-shopping"></i></a>
+                    <a href="<?php echo aff_tiktokDetailURL($prod_tiktok["id"]);?>">Cek Disini <i class="fa-solid fa-bag-shopping"></i></a>
                   </button>
                 </div>
                 <div class="meta">

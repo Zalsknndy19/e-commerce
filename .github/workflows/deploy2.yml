@@ -1,4 +1,4 @@
-name: Deploy to InfinityFree via FTP
+name: Deploy to ProFreeHost  via FTP
 
 on:
   push:

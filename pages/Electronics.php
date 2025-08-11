@@ -1,6 +1,6 @@
 <?php
 $baseDir = __DIR__.'/../';
-include $baseDir."/command/db.php";
+require_once $baseDir."/command/db.php";
 $elc_gadget = "SELECT * FROM produk_cache WHERE kategori = 'Gadget'";
 $tiktok_elc_gadget = $dbcache->query($elc_gadget);
 $elc_electronic = "SELECT * FROM produk_cache WHERE kategori = 'Elektronik'";
@@ -8,7 +8,7 @@ $tiktok_elc_electronic = $dbcache->query($elc_electronic);
 $elc_charger = "SELECT * FROM produk_cache WHERE kategori = 'Charger'";
 $tiktok_elc_charger = $dbcache->query($elc_charger);
 
-include $baseDir.'/partials/func/functions.php';
+require_once $baseDir.'/partials/func/functions.php';
 ?>
 <!DOCTYPE html>
 <html>
@@ -20,11 +20,11 @@ include $baseDir.'/partials/func/functions.php';
   $activePage = 'Electronics';
   $ogurl = categoryURL($activePage);
   $ogtype = "website";
-  include $baseDir . '/partials/head.php';
+  require_once $baseDir . '/partials/head.php';
 ?>
   <body>
 <?php
-  include $baseDir . '/partials/header.php';
+  require_once $baseDir . '/partials/header.php';
 ;?>
     <main>
       <!-- Sambutan -->
@@ -63,6 +63,6 @@ include $baseDir.'/partials/func/functions.php';
       <!-- End Product Section -->
     </main>
 
-<?php include $baseDir.'/partials/footer.php';?>
+<?php require_once $baseDir.'/partials/footer.php';?>
 	</body>
 </html>

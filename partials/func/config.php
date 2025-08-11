@@ -57,7 +57,7 @@ function categoryURL($categoryName) {
     if (IS_DEVELOPMENT) {
         // Lingkungan Development: Gunakan path file PHP asli.
         // ucfirst() membuat huruf pertama jadi besar (fashion -> Fashion)
-        return baseURL('pages/' . ucfirst($categoryName) . '.php');
+        return baseURL('kategori/' . strtolower($categoryName));
     } else {
         // Lingkungan Produksi: Gunakan struktur Clean URL.
         // strtolower() untuk konsistensi URL (Fashion -> fashion)
@@ -76,7 +76,7 @@ function categoryURL($categoryName) {
 function ebookCatalogURL() {
     if (IS_DEVELOPMENT) {
         // Lingkungan Development
-        return baseURL('pages/ebook/index.php');
+        return baseURL('ebook/');
     } else {
         // Lingkungan Produksi
         return baseURL('ebook/');
@@ -94,7 +94,7 @@ function ebookCatalogURL() {
 function aff_tiktokDetailURL($aff_tiktokId) {
     if (IS_DEVELOPMENT) {
         // Lingkungan Development
-        return baseURL('pages/aff_tiktok.php?kode=' . $aff_tiktokId);
+        return baseURL('aff_tiktok/detail/' . $aff_tiktokId);
     } else {
         // Lingkungan Produksi (Asumsi ada aturan .htaccess untuk ini)
         return baseURL('aff_tiktok/detail/' . $aff_tiktokId);
@@ -112,7 +112,7 @@ function aff_tiktokDetailURL($aff_tiktokId) {
 function ebookDetailURL($ebookId) {
     if (IS_DEVELOPMENT) {
         // Lingkungan Development
-        return baseURL('pages/ebook/detail.php?id=' . $ebookId);
+        return baseURL('ebook/detail/' . $ebookId);
     } else {
         // Lingkungan Produksi (Asumsi ada aturan .htaccess untuk ini)
         return baseURL('ebook/detail/' . $ebookId);
@@ -130,7 +130,7 @@ function ebookDetailURL($ebookId) {
 function promptDetailURL($promptId) {
     if (IS_DEVELOPMENT) {
         // Lingkungan Development
-        return baseURL('pages/detail-prompt.php?id=' . $promptId);
+        return baseURL('prompt/detail/' . $promptId);
     } else {
         // Lingkungan Produksi (Asumsi ada aturan .htaccess untuk ini)
         return baseURL('prompt/detail/' . $promptId);

@@ -5,7 +5,7 @@
         <div class="logo">
           <a href="/">
             <model-viewer
-              src="/partials/logo.glb"
+              src="/logo.glb"
               poster="/assets/img/fav.png"
               alt="Logo 3D ZHStore."
               shadow-intensity="0"

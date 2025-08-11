@@ -1,6 +1,6 @@
 <?php
   $baseDir = realpath(__DIR__ . '/../'); // ini berarti mengarah ke webroot
-  include $baseDir."/command/db.php";
+  require_once $baseDir."/command/db.php";
   $b_w = "SELECT * FROM produk_cache WHERE kategori = 'Baju Wanita'";
   $tiktok_b_w = $dbcache->query($b_w);
   $c_w = "SELECT * FROM produk_cache WHERE kategori = 'Celana Wanita'";
@@ -10,7 +10,7 @@
   $c_p = "SELECT * FROM produk_cache WHERE kategori = 'Celana'";
   $tiktok_c_p = $dbcache->query($c_p);
 
-  include $baseDir.'/partials/func/functions.php'
+  require_once $baseDir.'/partials/func/functions.php'
 ?>
 <!DOCTYPE html>
 <html>
@@ -22,11 +22,11 @@
   $activePage = 'Fashion';
   $ogurl = categoryURL($activePage);
   $ogtype = "website";
-  include $baseDir . '/partials/head.php';
+  require_once $baseDir . '/partials/head.php';
 ?>
   <body>
 <?php
-  include $baseDir . '/partials/header.php';
+  require_once $baseDir . '/partials/header.php';
 ;?>
     <main>
       <!-- Sambutan -->
@@ -73,6 +73,6 @@
       <!-- End Product Section -->
     </main>
 
-<?php include $baseDir.'/partials/footer.php';?>
+<?php require_once $baseDir.'/partials/footer.php';?>
 	</body>
 </html>

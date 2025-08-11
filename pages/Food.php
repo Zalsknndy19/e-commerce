@@ -1,12 +1,12 @@
 <?php
   $baseDir = realpath(__DIR__ . '/../'); // ini berarti mengarah ke webroot
-  include $baseDir."/command/db.php";
+  require_once $baseDir."/command/db.php";
   $F_makanan = "SELECT * FROM produk_cache WHERE kategori = 'Makanan'";
   $tiktok_F_makanan = $dbcache->query($F_makanan);
   $F_minuman = "SELECT * FROM produk_cache WHERE kategori = 'Minuman'";
   $tiktok_F_minuman = $dbcache->query($F_minuman);
 
-  include $baseDir.'/partials/func/functions.php'
+  require_once $baseDir.'/partials/func/functions.php'
 ?>
 <!DOCTYPE html>
 <html>
@@ -18,11 +18,11 @@
   $activePage = 'Food';
   $ogurl = categoryURL($activePage);
   $ogtype = "website";
-  include $baseDir . '/partials/head.php';
+  require_once $baseDir . '/partials/head.php';
 ?>
   <body>
 <?php
-  include $baseDir . '/partials/header.php';
+  require_once $baseDir . '/partials/header.php';
 ;?>
     <main>
       <!-- Sambutan -->
@@ -53,6 +53,6 @@
       <!-- End Product Section -->
     </main>
 
-<?php include $baseDir.'/partials/footer.php';?>
+<?php require_once $baseDir.'/partials/footer.php';?>
 	</body>
 </html>

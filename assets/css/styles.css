@@ -1208,11 +1208,19 @@ ul, ol {
   background: #0093D1;
   color: white;
   height: 40px;
-  margin-top: 20px;
+  margin-top: 50px;
   
-  width: auto;
+  
   border-radius: 14px 5px 14px 5px;
-  transition: 0.3s all;
+  
+  border:none;
+  
+  padding:8px 15px;
+  font-size:13px;
+  font-weight:400;
+  cursor:pointer;
+  transition:.3s;
+  box-shadow:0 0 3px rgba(255,255,255,.6)
 }
 
 .checkout-btn:hover {

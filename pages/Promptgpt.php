@@ -15,11 +15,11 @@
   $ogurl = categoryURL($activePage);
   $ogtype = "website";
   $is_prompt_page = true;
-  include $baseDir . '/partials/head.php';
+  require_once $baseDir . '/partials/head.php';
 ?>
   <body>
 <?php
-  include $baseDir . '/partials/header.php';
+  require_once $baseDir . '/partials/header.php';
 ;?>
     <main>
       <!-- Sambutan -->
@@ -44,7 +44,7 @@
             <div class="card-content">
               <div class="card-title"><?php echo $prompt['judul'];?></div>
               <div class="card-meta">📋 <?php echo $prompt['counter_copy'];?>X Disalin/Copied</div>
-              <a href="/pages/detail-prompt.php?id=<?php echo $prompt['id'];?>" class="card-button">Lihat Prompt</a>
+              <a href="<?php echo promptDetailURL($prompt['id']);?>" class="card-button">Lihat Prompt</a>
             </div>
           </div>
 <?php }?>
@@ -61,6 +61,6 @@
       <!-- End Prompt Section -->
     </main>
 
-<?php include $baseDir.'/partials/footer.php';?>
+<?php require_once $baseDir.'/partials/footer.php';?>
 </body>
 </html>

@@ -1,10 +1,10 @@
 <?php
   $baseDir = realpath(__DIR__."/../");
-  include $baseDir."/command/db.php";
+  require_once $baseDir."/command/db.php";
   $all = "SELECT * FROM produk_cache ORDER BY kategori ASC";
   $tiktok_all = $dbcache->query($all);
 
-  include $baseDir.'/partials/func/functions.php'
+  require_once $baseDir.'/partials/func/functions.php'
 ?>
 <!DOCTYPE html>
 <html>
@@ -16,12 +16,12 @@
   $activePage = 'Beranda';
   $ogurl = categoryURL($activePage);
   $ogtype = "website";
-  include $baseDir . '/partials/head.php';
+  require_once $baseDir . '/partials/head.php';
 ?>
 
   <body>
 <?php
-  include $baseDir . '/partials/header.php';
+  require_once $baseDir . '/partials/header.php';
 ;?>
     <main>
       <!-- Sambutan -->
@@ -41,7 +41,7 @@
         <div class="product-grid">
 <?php
   while ($prod_tiktok = $tiktok_all->fetchArray(SQLITE3_ASSOC)){
-    include $baseDir.'/partials/func/var.php';
+    require_once $baseDir.'/partials/func/var.php';
 ?>
           <div class="card-new">
             <div class="badge"><?php echo $prod_tiktok["custom_badge"];?></div>
@@ -68,7 +68,7 @@
                   <span class="new"><?php echo $harga_new;?></span>
                 </div>
                 <button class="btn">
-                  <a href="/pages/aff_tiktok.php?kode=<?php echo $prod_tiktok["id"];?>" target="_blank">Cek Disini <i class="fa-solid fa-bag-shopping"></i></a>
+                  <a href="<?php echo aff_tiktokDetailURL($prod_tiktok["id"]);?>" target="_blank">Cek Disini <i class="fa-solid fa-bag-shopping"></i></a>
                 </button>
               </div>
               <div class="meta">
@@ -86,6 +86,6 @@
       <!-- End Product Section -->
     </main>
 
-<?php include $baseDir.'/partials/footer.php';?>
+<?php require_once $baseDir.'/partials/footer.php';?>
   </body>
 </html>

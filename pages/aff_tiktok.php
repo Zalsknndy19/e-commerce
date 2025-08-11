@@ -1,13 +1,13 @@
 <?php
   $baseDir = realpath(__DIR__ . '/../'); // ini berarti mengarah ke webroot
-  include $baseDir."/command/db.php";
+  require_once $baseDir."/command/db.php";
   $no = 1;
   $id = $_GET['kode'];
   $product = "SELECT * FROM produk_cache WHERE id = $id";
   
   $tiktok = $dbcache->query($product);
   
-  include $baseDir.'/partials/func/functions.php';
+  require_once $baseDir.'/partials/func/functions.php';
   while($prod_tiktok = $tiktok->fetchArray(SQLITE3_ASSOC)){
     include $baseDir.'/partials/func/var.php';
     $kategori = $prod_tiktok['kategori'];
@@ -25,12 +25,12 @@
   $ogtype = "product";
   $text = 'Lihat produk ini di ZHStore! ' . $ogurl;
   $is_product_page = true;
-  include $baseDir . '/partials/head.php';
+  require_once $baseDir . '/partials/head.php';
 ?>
   <body>
 <?php
   $activePage = $prod_tiktok['main_kategori'];
-  include $baseDir . '/partials/header.php';
+  require_once $baseDir . '/partials/header.php';
 ;?>
     <main>
       <!-- BREADCRUMB -->
@@ -42,8 +42,8 @@
             <div class="col-md-12">
               <ul class="breadcrumb-tree">
                 <li><a href="/">Beranda</a></li>
-                <li><a href="/pages/<?php echo $prod_tiktok['main_kategori'];?>.php"><?php echo $prod_tiktok['main_kategori'] ;?></a></li>
-                <li><a href="/pages/<?php echo $prod_tiktok['main_kategori'];?>.php#<?php echo $id_kategori;?>"><?php echo $prod_tiktok['kategori'];?></a></li>
+                <li><a href="<?php echo categoryURL($prod_tiktok['main_kategori']);?>"><?php echo $prod_tiktok['main_kategori'] ;?></a></li>
+                <li><a href="<?php echo categoryURL($prod_tiktok['main_kategori']);?>#<?php echo $id_kategori;?>"><?php echo $prod_tiktok['kategori'];?></a></li>
                 <li class="active" aria-current="page"><?php echo substr($title_fix,0,10)."...";?></li>
               </ul>
             </div>
@@ -92,8 +92,8 @@
         
           <ul class="prod-links">
             <li>Kategori:</li>
-            <li><a href="/pages/<?php echo $prod_tiktok['main_kategori'];?>.php"><?php echo $prod_tiktok['main_kategori'] ;?></a></li>
-            <li><a href="/pages/sub_kategori.php#<?php echo $id_kategori;?>"><?php echo $prod_tiktok['kategori'];?></a></li>
+            <li><a href="<?php echo categoryURL($prod_tiktok['main_kategori']);?>"><?php echo $prod_tiktok['main_kategori'] ;?></a></li>
+            <li><a href="<?php echo categoryURL($prod_tiktok['main_kategori']);?>#<?php echo $id_kategori;?>"><?php echo $prod_tiktok['kategori'];?></a></li>
           </ul>
         
           <ul class="prod-links">
@@ -101,17 +101,16 @@
             <li><a href="#"><i class="fa-brands fa-facebook"></i></a></li>
             <li><a href="#"><i class="fa-brands fa-twitter"></i></a></li>
             <li><a href="https://wa.me/?text=<?php echo $text ?>" target="_blank"><i class="fa-brands fa-whatsapp"></i></a></li>
-          </ul>
-          <button class="checkout-btn"><a href="<?php echo $prod_tiktok['url'];?>">Beli Sekarang</a></button>
+          </ul><br>
+          <a class="checkout-btn" href="<?php echo $prod_tiktok['url'];?>">Beli Sekarang</a><br>
           <a target="_blank" href="https://wa.me/?text=<?php echo $text ?>" id="whatsapp-button" style="position:fixed; bottom:10px; right:10px; width:50px; z-index:999;"><img loading="lazy" style="width:100%;" src="/assets/img/icon/whatsapp.png" /></a>
         </div>
       </section>
 <?php }?><br>
 
       <!-- Produk Terkait -->
-      <h2 id="highlight">Produk Terkait</h2>
       <section class="prod-tabs">
-        <h3>Produk Yang Mungkin Kamu Suka</h3>
+        <h2 id="highlight">Produk Terkait Yang Mungkin Kamu Suka</h2>
         <div id="tab1" class="tab-pane active">
           <div class="prod-slick" data-nav="#slick-nav-1">
 <?php
@@ -143,7 +142,7 @@
 <?php endif; ?>
                     <span class="new"><?php echo $harga_new;?></span>
                   </div>
-                  <a class="btn" href="/pages/aff_tiktok.php?kode=<?php echo $prod_tiktok["id"];?>">Cek Disini <i class="fa-solid fa-bag-shopping"></i></a>
+                  <a class="btn" href="<?php echo aff_tiktokDetailURL($prod_tiktok["id"]);?>">Cek Disini <i class="fa-solid fa-bag-shopping"></i></a>
                 </div>
                 <div class="meta">
                   <div class="rating">
@@ -163,6 +162,6 @@
       <!-- / Produk -->
     </main>
 
-<?php include $baseDir.'/partials/footer.php';?>
+<?php require_once $baseDir.'/partials/footer.php';?>
   </body>
 </html>

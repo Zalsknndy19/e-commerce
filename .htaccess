@@ -1,83 +1,25 @@
-# ==============================================================================
-#                      KONFIGURASI APACHE SERVER (.htaccess)
-# ==============================================================================
+# Mengaktifkan Mesin Rewrite
+RewriteEngine On
 
-<IfModule mod_rewrite.c>
-    RewriteEngine On
+# Menetapkan basis URL ke root domain
+RewriteBase /
 
-    # --------------------------------------------------------------------------
-    # PENGALIHAN DASAR (Redirects)
-    # --------------------------------------------------------------------------
+# Menetapkan halaman error kustom
+ErrorDocument 404 /404.html
 
-    # 1. Alihkan semua permintaan ke HTTPS
-    RewriteCond %{HTTPS} off
-    RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+# KONDISI UTAMA:
+# Aturan di bawah ini hanya berjalan jika yang diminta BUKAN file yang ada...
+RewriteCond %{REQUEST_FILENAME} !-f
+# ...DAN BUKAN direktori yang ada.
+RewriteCond %{REQUEST_FILENAME} !-d
 
-    # 2. Hapus "www." dari domain
-    RewriteCond %{HTTP_HOST} ^www\.(.*)$ [NC]
-    RewriteRule ^(.*)$ https://%1/$1 [R=301,L]
+# ATURAN UTAMA:
+# Arahkan SEMUA permintaan yang lolos dari kondisi di atas ke index.php
+RewriteRule . /index.php [L]
 
-
-    # --------------------------------------------------------------------------
-    # ATURAN URL CANTIK (Clean URLs)
-    # --------------------------------------------------------------------------
-
-    # 3. Aturan untuk menyembunyikan ekstensi file .php
-    # Ini harus berjalan sendiri TANPA kondisi "file not found"
-    RewriteCond %{REQUEST_FILENAME} !-d
-    RewriteCond %{REQUEST_FILENAME}\.php -f
-    RewriteRule ^(.*)$ $1.php [L]
-
-    # ==========================================================================
-    #             BAGIAN KUNCI YANG DITAMBAHKAN
-    # ==========================================================================
-    # Aturan-aturan di bawah ini HANYA akan dijalankan jika
-    # file atau direktori yang diminta TIDAK ADA secara fisik.
-    # Ini mencegah konflik dengan file aset (CSS, JS, gambar).
-    RewriteCond %{REQUEST_FILENAME} !-f
-    RewriteCond %{REQUEST_FILENAME} !-d
-    # ==========================================================================
-
-    # 4. Aturan untuk URL Kategori Produk
-    RewriteRule ^kategori/([a-zA-Z]+)/?$ /pages/$1.php?kategori=$1 [NC,L,QSA]
-
-    # 5. Aturan untuk Katalog E-book
-    RewriteRule ^ebook/?$ /pages/ebook/index.php [NC,L]
-
-    # 6. Aturan untuk Detail Produk
-    RewriteRule ^aff_tiktok/detail/([0-9]+)/?$ /pages/aff_tiktok.php?kode=$1 [NC,L,QSA]
-    
-    # 7. Aturan untuk Detail E-book
-    RewriteRule ^ebook/detail/([0-9]+)/?$ /pages/ebook/detail.php?id=$1 [NC,L,QSA]
-    
-    # 8. Aturan untuk Detail prompt
-    RewriteRule ^prompt/detail/([0-9]+)/?$ /pages/detail-prompt.php?id=$1 [NC,L,QSA]
-    
-    # --------------------------------------------------------------------------
-    # PENCEGAHAN ERROR & KEAMANAN
-    # --------------------------------------------------------------------------
-
-    # 9. Mencegah akses langsung ke file sensitif ini (.htaccess)
-    <Files ".htaccess">
-        Require all denied
-    </Files>
-    
-    # 10. Menetapkan halaman error 404 kustom
-    ErrorDocument 404 /404.html
-
-</IfModule>
-
-# Opsi Tambahan untuk Performa (Bisa diaktifkan atau tidak)
+# OPSIONAL: Aturan untuk Caching (biarkan saja jika sudah ada)
 <IfModule mod_expires.c>
    ExpiresActive On
    ExpiresByType image/jpg "access 1 year"
-   ExpiresByType image/jpeg "access 1 year"
-   ExpiresByType image/gif "access 1 year"
-   ExpiresByType image/png "access 1 year"
-   ExpiresByType text/css "access 1 month"
-   ExpiresByType application/pdf "access 1 month"
-   ExpiresByType text/javascript "access 1 month"
-   ExpiresByType application/x-javascript "access 1 month"
-   ExpiresByType image/x-icon "access 1 year"
-   ExpiresDefault "access 2 days"
+   # ... sisa aturan cache Anda ...
 </IfModule>

@@ -15,13 +15,14 @@
   $ogimg = "https://res.cloudinary.com/dii1gyt4o/image/upload/".htmlspecialchars($data['link_img']);
   $ogurl = promptDetailURL($id);
   $ogtype = "product";
+  $text = 'Lihat prompt keren ini di ZHStore! ' . $ogurl;
   $is_prompt_page = true;
-  include $baseDir . '/partials/head.php';
+  require_once $baseDir . '/partials/head.php';
 ?>
   <body>
 <?php
   $activePage = 'Promptgpt';
-  include $baseDir . '/partials/header.php';
+  require_once $baseDir . '/partials/header.php';
 ;?>
     <main>
       <h1 class="judul-kategori"><?php echo $data['judul'];?></h1>
@@ -42,11 +43,12 @@
           In English:<br>
           After the Prompt has been successfully copied, open ChatGPT or whatever application you are using, then upload the photo you want to edit, then paste the copied Prompt.
         </p>
+        <a target="_blank" href="https://wa.me/?text=<?php echo $text ?>" id="whatsapp-button" style="position:fixed; bottom:10px; right:10px; width:50px; z-index:999;"><img loading="lazy" style="width:100%;" src="/assets/img/icon/whatsapp.png" /></a>
       </section>
     </main>
 
 
-<?php include $baseDir.'/partials/footer.php';?>
+<?php require_once $baseDir.'/partials/footer.php';?>
   <script>
     document.addEventListener("DOMContentLoaded", function () {
       const copyBtn = document.querySelector('.copy-btn');
