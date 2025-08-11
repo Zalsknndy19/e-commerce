@@ -58,10 +58,10 @@ switch ($mainRoute) {
             // Ini untuk halaman detail e-book
             $idEbook = $pathParts[2];
             $_GET['id'] = $idEbook;
-            include __DIR__ . '/pages/ebook/detail.php'; // Pastikan file ini ada
+            include __DIR__ . '/pages/detail-ebook.php'; // Pastikan file ini ada
         } else {
             // Ini untuk halaman katalog e-book
-            include __DIR__ . '/pages/ebook/index.php';
+            include __DIR__ . '/pages/Ebook.php';
         }
         break;
         

@@ -43,7 +43,7 @@
       <section class="category-grid">
 <?php while ($rowcateg = $categ->fetchArray(SQLITE3_ASSOC)) { ?>
         <div class="categ-card">
-          <img loading="lazy" src="/assets/img/splash/<?php echo $rowcateg['kateg'];?>.webp" onerror="this.onerror=null; this.src='img/default.webp';" alt="Foto <?php echo $rowcateg['kateg'];?>">
+          <img loading="lazy" src="/assets/img/splash/<?php echo $rowcateg['kateg'];?>.webp" onerror="this.onerror=null; this.src='/assets/img/default.webp';" alt="Foto <?php echo $rowcateg['kateg'];?>">
           <div class="categ-label">
             <span class="categ-title"><?php echo $rowcateg['kateg'];?></span>
             <a href="<?php echo categoryURL($rowcateg["kateg"]);?>" class="categ-btn">Lihat Disini <i class="fa fa-arrow-circle-right"></i></a>

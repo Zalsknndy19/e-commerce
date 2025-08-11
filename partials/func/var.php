@@ -7,4 +7,6 @@ $harga_new = "Rp. " .number_format($prod_tiktok["harga_new"], 0, ",", ".");
 $harga_old = "Rp. " .number_format($prod_tiktok["harga_old"], 0, ",", ".");
 $jumlah_review = formatJumlah($prod_tiktok["rating"]);
 $rating = ratingSemua($prod_tiktok["rating"]);
+$harga_baru = "Rp. " .number_format($ebook["harga_baru"], 0, ",", ".");
+$harga_lama = "Rp. " .number_format($ebook["harga_lama"], 0, ",", ".");
 ?>

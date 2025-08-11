@@ -2,6 +2,8 @@
   require_once __DIR__.'/func/config.php';
   // Deteksi apakah ini halaman detail produk
   $is_product_page = isset($is_product_page) && $is_product_page === true;
+  // Deteksi apakah ini halaman prompt
+  $is_prompt_page = isset($is_prompt_page) && $is_prompt_page === true;
 
   // Jika ada info produk, ambil datanya (opsional jika sudah diset dari luar)
   $product_name = $prod_tiktok['title'] ?? '';
@@ -9,8 +11,6 @@
   $product_currency = $product_currency ?? 'IDR';
   $product_availability = $product_availability ?? 'https://schema.org/InStock';
 
-  // Deteksi apakah ini halaman prompt
-  $is_prompt_page = isset($is_prompt_page) && $is_prompt_page === true;
 ?>
   <head>
     <meta charset="utf-8"/>
@@ -22,12 +22,12 @@
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="default" />
     <meta name="apple-mobile-web-app-title" content="ZHStore." />
-    <link rel="apple-touch-icon" href="/favicon-192.png" />
+    <link rel="apple-touch-icon" href="<?php echo baseURL('/favicon-192.png');?>" />
     <title><?php echo $ogtitle;?></title>
     <meta name="description" content="<?php echo $ogdesc;?>" />
     <!-- Open Graph (Facebook, WhatsApp, Telegram, LinkedIn, dll) -->
     <meta name="facebook-domain-verification" content="whn8cn3b3hrw4jvkjezmn02bju92wx" />
-    <meta property="og:logo" content="https://store.zhwifi.web.id/assets/img/fav.png" />
+    <meta property="og:logo" content="<?php echo baseURL('/assets/img/fav.png');?>" />
     <meta property="og:title" content="<?php echo $ogtitle;?>" />
     <meta property="og:description" content="<?php echo $ogdesc;?>" />
 <?php
@@ -35,7 +35,7 @@
   $is_absolute = (strpos($ogimg, 'http') === 0);
 
   // Buat URL final
-  $final_ogimg = $is_absolute ? $ogimg : 'https://store.zhwifi.web.id' . $ogimg;
+  $final_ogimg = $is_absolute ? $ogimg : baseURL() . $ogimg;
 ?>
     <meta property="og:image" content="<?php echo htmlspecialchars($final_ogimg); ?>" />
     <meta property="og:url" content="<?php echo $ogurl;?>" />
@@ -72,10 +72,27 @@
     <link type="text/css" rel="stylesheet" href="<?php echo baseURL(auto_version('/assets/css/nouislider.min.css')); ?>"/>
     <!-- Font Awesome Icon -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link rel="icon" href="/assets/img/fav.png" type="image/x-icon"/>
+    <link rel="icon" href="<?php echo baseURL('/assets/img/fav.png');?>" type="image/x-icon"/>
  
     <!-- Custom stylesheet -->
+    <!-- ======================================================= -->
+    <!--     LOGIKA UNTUK MEMUAT STYLESHEET SECARA KONDISIONAL   -->
+    <!-- ======================================================= -->
+    <!-- Deteksi apakah ini halaman ebook -->
+<?php if (isset($is_ebook_page) && $is_ebook_page === true): ?>
+    <!-- Jika ini halaman E-book, HANYA muat style untuk e-book -->
+    <link type="text/css" rel="stylesheet" href="<?php echo baseURL(auto_version('/assets/css/style-ebook.css')); ?>"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    
+<?php else: ?>
+        
+    <!-- Untuk SEMUA halaman lainnya, muat style default -->
     <link type="text/css" rel="stylesheet" href="<?php echo baseURL(auto_version('/assets/css/styles.css')); ?>"/>
+    
+<?php endif; ?>
+    <!-- ======================================================= -->
 <?php if ($is_prompt_page): ?>
     <link type="text/css" rel="stylesheet" href="<?php echo baseURL(auto_version('/assets/css/styleprompt.css')); ?>"/>
 <?php endif; ?>
@@ -103,6 +120,34 @@
         "@type": "AggregateRating",
         "ratingValue": <?php echo $rating ?>,
         "reviewCount": <?php echo $prod_tiktok["rating"] ?>
+      }
+    }
+    </script>
+<?php endif; ?>
+<?php if ($is_detail_ebook): 
+  $sku_id = str_pad($id, 4, '0', STR_PAD_LEFT);
+  $ebook_name = $ebook['judul'] ?? '';
+  $ebook_price = $ebook["harga_baru"] ?? '';
+  $ebook_currency = $ebook_currency ?? 'IDR';
+  $ebook_availability = $ebook_availability ?? 'https://schema.org/InStock';
+
+?>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org/",
+      "@type": "Product",
+      "name": "<?php echo htmlspecialchars($ebook_name) ?>",
+      "image": ["<?php echo $ogimg ?>"],
+      "description": "<?php echo htmlspecialchars(strip_tags($ebook_description)) ?>",
+      "sku": "ZH-EBK-<?php echo $sku_id ?>",
+      "offers": {
+        "@type": "Offer",
+        "url": "<?php echo $ogurl ?>",
+        "priceCurrency": "<?php echo $ebook_currency ?>",
+        "price": <?php echo $ebook_price ?>,
+        "priceValidUntil": "2030-12-31",
+        "availability": "<?php echo $ebook_availability ?>",
+        "itemCondition": "https://schema.org/NewCondition"
       }
     }
     </script>

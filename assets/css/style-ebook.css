@@ -1,0 +1,375 @@
+/* Pengaturan Dasar dan Font */
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background-color: #FDF6F0; /* Warna krem lembut */
+    color: #5C4B51; /* Warna teks gelap lembut */
+}
+
+.container {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Font Judul */
+h1, h2, .logo, .logo-footer {
+    font-family: 'Fredoka One', cursive;
+}
+
+/* Header */
+header {
+    background: #fff;
+    padding: 15px 0;
+    border-bottom: 3px dashed #FFC3A0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.2em;
+    color: #FF6B6B;
+}
+
+.cta-button-header {
+    background-color: #FFD966;
+    color: #5C4B51;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: bold;
+    transition: transform 0.2s;
+}
+
+.cta-button-header:hover {
+    transform: scale(1.05);
+}
+
+/* Bagian Hero */
+.hero {
+    /* Ganti dengan URL gambar latar belakang sampul buku Anda */
+    background-image: linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.7)), url('https://via.placeholder.com/1200x600/A0C4FF/FFFFFF?text=Ilustrasi+Hutan');
+    background-size: cover;
+    background-position: center;
+    padding: 100px 0;
+    text-align: center;
+}
+
+.ebook-hero-section {
+  border-bottom: 2px solid #282E2E;
+}
+
+.hero h1 {
+    font-size: 2em;
+    color: #4CAF50;
+    margin-bottom: 10px;
+}
+
+.hero p {
+    font-size: 1em;
+    max-width: 600px;
+    margin: 0 auto 30px auto;
+}
+
+.cta-button-main {
+    background-color: #FF6B6B;
+    color: #fff;
+    padding: 15px 35px;
+    font-size: 1em;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: bold;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    transition: transform 0.2s, background-color 0.2s;
+}
+
+.cta-button-main:hover {
+    transform: translateY(-5px);
+    background-color: #e55a5a;
+}
+
+/* Bagian Umum */
+section {
+    padding: 80px 0;
+    text-align: center;
+}
+
+section h1 {
+    font-size: 2em;
+    font-weight: 400;
+    color: #4CAF50; /* Hijau ceria */
+    margin-bottom: 20px;
+    padding: 10px;
+    border: 2px solid #4CAF50;
+    border-radius: 5px 25px 5px 25px;
+}
+section h2 {
+    font-size: 1.2em;
+    font-weight: 400;
+    color: #4CAF50; /* Hijau ceria */
+    margin-bottom: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border: 2px solid #4CAF50;
+    border-radius: 5px 25px 5px 25px;
+}
+
+/* Pengenalan */
+.pengenalan .content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    text-align: left;
+}
+
+.karakter-img {
+    border-radius: 50%;
+    border: 5px solid #FFD966;
+    width: 200px;
+    height: 200px;
+}
+
+.pengenalan p {
+    max-width: 500px;
+    line-height: 1.8;
+}
+
+/* Fitur */
+.fitur {
+    background-color: #E6FFFA; /* Mint lembut */
+}
+
+.fitur-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(120px1fr));
+    gap: 12px;
+}
+
+.fitur-item {
+    background: #fff;
+    padding: 30px;
+    border-radius: 20px;
+    border: 2px solid #282E2E;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+.fitur-item .icon {
+    font-size: 3em;
+}
+
+.fitur-item h3 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+    font-size: 1em;
+    color: #FF6B6B;
+}
+
+/* Pratinjau */
+.galeri {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.galeri img {
+    width: 300px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 15px;
+    border: 5px solid #fff;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s;
+}
+
+.galeri img:hover {
+    transform: scale(1.05) rotate(2deg);
+}
+
+/* Testimoni */
+.testimoni-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+}
+
+.testimoni-item {
+    background-color: #FFF5BA; /* Kuning mentega */
+    padding: 30px;
+    border-radius: 15px;
+    position: relative;
+}
+
+.testimoni-item::before { /* Membuat efek seperti sticky note */
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: 20px;
+    width: 50px;
+    height: 25px;
+    background-color: rgba(255, 217, 102, 0.7);
+    transform: rotate(-15deg);
+}
+
+.testimoni-item p {
+    font-style: italic;
+    margin-bottom: 20px;
+}
+
+.testimoni-item span {
+    font-weight: bold;
+    color: #5C4B51;
+}
+
+/* Final CTA */
+.final-cta {
+    background-color: #98FB98; /* Hijau terang */
+}
+
+.harga {
+    font-size: 2em;
+    font-weight: bold;
+    color: #333;
+    margin: 20px 0;
+}
+
+.cta-button-final {
+    background-color: #FF6B6B;
+    color: #fff;
+    padding: 20px 40px;
+    font-size: 1.5em;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: bold;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    display: inline-block;
+    transition: all 0.3s ease;
+}
+
+.cta-button-final:hover {
+    transform: scale(1.1);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+/* Footer */
+footer {
+    background: #FFC3A0; /* Warna oranye pastel */
+    padding: 40px 0;
+    text-align: center;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 20'%3E%3Cpath fill='%23FDF6F0' d='M0 20 Q 50 0 100 20 L 100 21 L 0 21 Z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-size: 100% 20px;
+    background-position: top;
+    padding-top: 60px; /* Ruang untuk efek rumput */
+}
+
+.logo-footer {
+    font-size: 1.8em;
+    color: #fff;
+    margin: 0;
+}
+
+/* ================================== */
+/*         GAYA HALAMAN KATALOG       */
+/* ================================== */
+
+/* Penataan Grid untuk Katalog */
+.katalog-grid {
+    display: grid;
+    /* Membuat kolom yang responsif. Akan jadi 2 kolom di tablet, dan 3 di desktop. */
+    grid-template-columns: repeat(auto-fit, minmax(200px, 2fr));
+    gap: 8px; /* Jarak antar kartu buku */
+    margin-top: 50px;
+}
+
+/* Kartu untuk setiap item buku */
+.buku-item {
+    background: #fff;
+    border-radius: 20px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    padding: 20px 20px 30px 20px;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.buku-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+}
+
+/* Gambar cover buku di dalam kartu */
+.buku-item img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+/* Judul buku */
+.buku-item h3 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    font-size: 1em;
+    color: #FF6B6B; /* Menggunakan warna merah aksen */
+    margin: 0 0 10px 0;
+}
+
+/* Deskripsi singkat buku */
+.buku-item p {
+    font-size: 0.7em;
+    line-height: 1.6;
+    color: #5C4B51;
+    flex-grow: 1; /* Membuat deskripsi mengisi ruang agar tombol rata bawah */
+    margin-bottom: 20px;
+}
+
+/* Harga buku */
+.harga-buku {
+    font-size: 1em;
+    font-weight: bold;
+    color: #4CAF50; /* Menggunakan warna hijau judul */
+    margin-bottom: 20px;
+}
+
+.harga-old {
+    font-size: 0.6em;
+    font-weight: bold;
+    color: #7ECCA0; /* Menggunakan warna hijau judul */
+    margin-bottom: 20px;
+    background: #FF6B6B;
+    padding: 4px;
+    border-radius: 25px;
+}
+
+/* Tombol CTA khusus untuk kartu katalog */
+.cta-button-katalog {
+    background-color: #FFD966; /* Menggunakan warna kuning aksen */
+    color: #5C4B51;
+    padding: 12px 25px;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: bold;
+    display: inline-block;
+    transition: transform 0.2s;
+}
+
+.cta-button-katalog:hover {
+    transform: scale(1.05);
+}
+
+/* Sedikit penyesuaian untuk footer agar tidak ada jarak aneh */
+.footer-katalog {
+    margin-top: 80px;
+}

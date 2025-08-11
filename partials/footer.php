@@ -1,3 +1,11 @@
+<?php if (isset($is_ebook_page) && $is_ebook_page === true): ?>
+    <footer class="footer-katalog">
+        <div class="container">
+            <p class="logo-footer">E-book edukatif untuk anak.</p>
+            <p>&copy; <script>document.write(new Date().getFullYear());</script> ZHStore. Dibuat dengan <i class="fa fa-heart"></i> oleh Rizal Hakim</p>
+        </div>
+    </footer>
+<?php else: ?>
     <footer>
       <section class="social-section">
         <div class="bar-social">&nbsp;</div>
@@ -79,5 +87,6 @@
     <script type="text/javascript" src="<?php echo baseURL(auto_version('/assets/js/slick.min.js')); ?>"></script>
     <script type="text/javascript" src="<?php echo baseURL(auto_version('/assets/js/script.js')); ?>"></script>
     <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.0.0/model-viewer.min.js"></script>
-<script src="/assets/js/main.js"></script>
-<script src="<?= baseURL(auto_version('/assets/js/main.js')); ?>"></script>
+    <script src="/assets/js/main.js"></script>
+    <script src="<?= baseURL(auto_version('/assets/js/main.js')); ?>"></script>
+<?php endif; ?>

@@ -1,3 +1,16 @@
+<?php if (isset($is_ebook_page) && $is_ebook_page === true): ?>
+    <header>
+        <div class="container">
+            <div class="logo">ZHStore.<br>E-book Cerita Anak</div>
+            <!-- Anda bisa menambahkan link ke katalog di sini nanti -->
+<?php if (isset($is_detail_ebook) && $is_detail_ebook === true): ?>
+            <a href="<?php echo categoryURL('Ebook');?>" class="cta-button-header">Halaman Sebelumnya</a>
+<?php else:?>
+            <a href="/" class="cta-button-header">Beranda</a>
+<?php endif;?>
+        </div>
+    </header>
+<?php else: ?>
     <!-- Main Header -->
     <!-- Navbar -->
     <header>
@@ -69,7 +82,7 @@
               <a href="<?php echo categoryURL('Accessories');?>">Accessories</a>
             </li>
             <li class="<?php echo ($activePage === 'E-book') ? 'active' : ''; ?>">
-              <a href="<?php echo ebookCatalogURL();?>">E-book</a>
+              <a href="<?php echo categoryURL('Ebook');?>">E-book</a>
             </li>
             <li class="<?php echo ($activePage === 'Electronics') ? 'active' : ''; ?>">
               <a href="<?php echo categoryURL('Electronics');?>">Electronics</a>
@@ -97,3 +110,4 @@
       <div id="overlay" class="overlay" onclick="toggleSidebar()"></div>
     </header>
     <!-- End Main Header -->
+<?php endif; ?>
